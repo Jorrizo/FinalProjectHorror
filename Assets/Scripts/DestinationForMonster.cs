@@ -27,5 +27,7 @@ public class DestinationForMonster : MonoBehaviour
             Debug.Log("Cool, je suis arrivé");
             agent.SetDestination(destination.transform.position);
         }
+
+        
     }
 }

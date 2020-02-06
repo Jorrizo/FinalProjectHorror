@@ -7,27 +7,19 @@ public class ViewHero : MonoBehaviour
 {
 
     public NavMeshAgent agent;
-    public GameObject hero;
-    public Vector3 heroPosition;
-
-    // Start is called before the first frame update
+    public Transform player;
+    public float state;
+    
     void Start()
     {
-        
+        state = 0;
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        heroPosition = hero.transform.position;
+        agent.SetDestination(player.position);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("je te vois chakal");
-            agent.SetDestination(heroPosition);
-        }
-    }
+    
 }
