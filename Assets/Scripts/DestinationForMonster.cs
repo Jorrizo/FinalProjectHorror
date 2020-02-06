@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AImovement : MonoBehaviour
+public class DestinationForMonster : MonoBehaviour
 {
-
     public NavMeshAgent agent;
     public GameObject destination;
 
+    // Start is called before the first frame update
     void Start()
     {
-        agent.SetDestination(destination.transform.position);
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
         
@@ -21,9 +22,10 @@ public class AImovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Destination"))
+        if (other.gameObject.CompareTag("monster"))
         {
             Debug.Log("Cool, je suis arrivé");
+            agent.SetDestination(destination.transform.position);
         }
     }
 }
