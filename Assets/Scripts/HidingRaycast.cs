@@ -8,17 +8,18 @@ public class HidingRaycast : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
-    public int RaySize = 10;
+    public bool hidden;
+
+    public int raySize = 10;
 
     private Transform _selection;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        hidden = false;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,26 +30,46 @@ public class HidingRaycast : MonoBehaviour
             _selection = null;
         }
 
-        if (Physics.Raycast(ray, out hit, RaySize))
+        if (Physics.Raycast(ray, out hit, raySize))
         {
             var selection = hit.transform;
+            var outlineComponent = selection.GetComponent<Outline>();
             Debug.DrawLine(ray.origin, hit.point);
 
             if (selection.CompareTag("Interactive"))
             {
-                hit.collider.gameObject.GetComponent<Outline>().enabled = true;                
-
-                if (Input.GetKeyDown(KeyCode.Space))
+                outlineComponent.OutlineColor = Color.red;
+                outlineComponent.enabled = true;
+                
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("Itworks");
+                    if(hidden == false)
+                    {
+                        GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = false;
+                        GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = false;
+                        hidden = true;
+                        Debug.Log("Itworks");
+                    }
+                    
+                    
                 }
 
                 _selection = selection;              
             }
-            
-       
+                   
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (hidden == true)
+            {
+                GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = true;
+                GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = true;
+                hidden = false;
+                Debug.Log("NotHidden");
+
+            }
+        }
 
     }
 }
