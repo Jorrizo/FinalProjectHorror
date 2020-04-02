@@ -503,6 +503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidden: 0
   raySize: 10
+  fade: 0
+  alph: 0
 --- !u!1 &1395294086
 GameObject:
   m_ObjectHideFlags: 0

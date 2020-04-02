@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HidingRaycast : MonoBehaviour
 {
     
@@ -14,14 +15,20 @@ public class HidingRaycast : MonoBehaviour
 
     private Transform _selection;
 
+
     void Start()
     {
+
+
         hidden = false;
     }
 
 
+
+
     void Update()
     {
+       
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
         if(_selection != null)
@@ -45,10 +52,10 @@ public class HidingRaycast : MonoBehaviour
                 {
                     if(hidden == false)
                     {
-                        GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = false;
+                       /* GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = false;
                         GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = false;
                         hidden = true;
-                        Debug.Log("Itworks");
+                        Debug.Log("Itworks");*/
                     }
                     
                     
@@ -57,18 +64,6 @@ public class HidingRaycast : MonoBehaviour
                 _selection = selection;              
             }
                    
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (hidden == true)
-            {
-                GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = true;
-                GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = true;
-                hidden = false;
-                Debug.Log("NotHidden");
-
-            }
         }
 
     }
