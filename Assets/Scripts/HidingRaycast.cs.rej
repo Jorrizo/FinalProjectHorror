@@ -1,0 +1,10 @@
+diff a/Assets/Scripts/HidingRaycast.cs b/Assets/Scripts/HidingRaycast.cs	(rejected hunks)
+@@ -15,7 +15,7 @@
+     // Start is called before the first frame update
+     void Start()
+     {
+-        
++   
+     }
+ 
+     // Update is called once per frame
