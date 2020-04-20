@@ -7,6 +7,8 @@ TagManager:
   - wall
   - monster
   - Destination
+  - Interactive
+  - Quest
   layers:
   - Default
   - TransparentFX
