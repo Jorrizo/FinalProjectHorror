@@ -7,8 +7,12 @@ TagManager:
   - wall
   - monster
   - Destination
+<<<<<<< HEAD
   - Interactive
   - Quest
+=======
+  - Destination2
+>>>>>>> e99ea32f36c7dd1b68f4d3e3d524dcd047f30198
   layers:
   - Default
   - TransparentFX

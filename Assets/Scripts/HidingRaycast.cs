@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class HidingRaycast : MonoBehaviour
 {
     
     Ray ray;
     RaycastHit hit;
 
+<<<<<<< HEAD
     public bool hidden;
     public bool isHidden;
 
@@ -25,11 +25,19 @@ public class HidingRaycast : MonoBehaviour
         newCamera.SetActive(false);
         isHidden = false;
         hidden = false;
+=======
+    public int RaySize = 10;
+
+    private Transform _selection;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+   
+>>>>>>> e99ea32f36c7dd1b68f4d3e3d524dcd047f30198
     }
 
-
-
-
+    // Update is called once per frame
     void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -40,15 +48,15 @@ public class HidingRaycast : MonoBehaviour
             _selection = null;
         }
 
-        if (Physics.Raycast(ray, out hit, raySize))
+        if (Physics.Raycast(ray, out hit, RaySize))
         {
             var selection = hit.transform;
-            var outlineComponent = selection.GetComponent<Outline>();
             Debug.DrawLine(ray.origin, hit.point);
 
             //pour les cachettes
             if (selection.CompareTag("Interactive"))
             {
+<<<<<<< HEAD
                 outlineComponent.OutlineColor = Color.red;
                 outlineComponent.enabled = true;
                 newCamera = selection.GetChild(0).gameObject;
@@ -66,6 +74,13 @@ public class HidingRaycast : MonoBehaviour
                     }
                     
                     
+=======
+                hit.collider.gameObject.GetComponent<Outline>().enabled = true;                
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("Itworks");
+>>>>>>> e99ea32f36c7dd1b68f4d3e3d524dcd047f30198
                 }
 
                 _selection = selection;
@@ -84,9 +99,11 @@ public class HidingRaycast : MonoBehaviour
 
                 _selection = selection;
             }
-                   
+            
+       
         }
 
+<<<<<<< HEAD
         //pour sortir des cachettes
         if(hidden == true)
         {
@@ -113,6 +130,8 @@ public class HidingRaycast : MonoBehaviour
             
             
         }
+=======
+>>>>>>> e99ea32f36c7dd1b68f4d3e3d524dcd047f30198
 
     }
 }

@@ -7,11 +7,13 @@ public class DestinationForMonster : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject destination;
+    private Vector3 michel;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        michel = destination.transform.position;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class DestinationForMonster : MonoBehaviour
         if (other.gameObject.CompareTag("monster"))
         {
             Debug.Log("Cool, je suis arrivé");
-            agent.SetDestination(destination.transform.position);
+            agent.SetDestination(michel);
         }
 
         
