@@ -16,6 +16,7 @@ public class AImovement : MonoBehaviour
 
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         state = 0;
         agent.SetDestination(destination1.transform.position);
         timer = 20f;
@@ -27,7 +28,7 @@ public class AImovement : MonoBehaviour
         // neutre
         if(state == 0)
         {
-            agent.SetDestination(destination1.transform.position);
+            Debug.Log("trop bien");
         }
 
         // colère
@@ -45,7 +46,7 @@ public class AImovement : MonoBehaviour
 
         if(timer <= 0)
         {
-            state = 2;
+            state = 0;
             timer = 20f;
         }
 
@@ -60,6 +61,12 @@ public class AImovement : MonoBehaviour
         if(other.gameObject.CompareTag("Destination"))
         {
             agent.SetDestination(destination2.transform.position);
+            Debug.Log("Etat : Neutre");
+        }
+
+        if (other.gameObject.CompareTag("Destination2"))
+        {
+            agent.SetDestination(destination1.transform.position);
             Debug.Log("Etat : Neutre");
         }
 
