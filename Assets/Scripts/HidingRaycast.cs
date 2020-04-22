@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class HidingRaycast : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject playerBody;
+    public GameObject flashLight;
 
     Ray ray;
     RaycastHit hit;
@@ -22,6 +25,7 @@ public class HidingRaycast : MonoBehaviour
 
     void Start()
     {
+        playerBody.GetComponent<MeshRenderer>().enabled = false;
         newCamera.SetActive(false);
         isHidden = false;
         hidden = false;
@@ -59,8 +63,9 @@ public class HidingRaycast : MonoBehaviour
                     if (hidden == false)
                     {
                         newCamera.SetActive(true);
-                        GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = false;
-                        GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = false;
+                        playerBody.SetActive(false);
+                        flashLight.SetActive(false);
+                        player.GetComponent<PlayerMovement>().enabled = false;
                         hidden = true;
                         Debug.Log("Itworks");
                     }
@@ -103,8 +108,9 @@ public class HidingRaycast : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     newCamera.SetActive(false);
-                    GameObject.Find("Hero").GetComponentInChildren<CapsuleCollider>().enabled = true;
-                    GameObject.Find("Hero").GetComponent<PlayerMovement>().enabled = true;
+                    playerBody.SetActive(true);
+                    flashLight.SetActive(true);
+                    player.GetComponent<PlayerMovement>().enabled = true;
                     isHidden = false;
                     hidden = false;
                     Debug.Log("yepyep");
