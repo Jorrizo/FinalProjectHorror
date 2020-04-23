@@ -400,9 +400,9 @@ MonoBehaviour:
   mouseSensitivity: 100
   hidingSpot: {fileID: 1395294090}
   BottomLimit: 15
-  TopLimit: 45
-  LeftLimit: 25
-  RightLimit: 75
+  TopLimit: 25
+  LeftLimit: 15
+  RightLimit: 15
 --- !u!1 &207838219
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 1.25
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
