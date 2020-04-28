@@ -53,13 +53,14 @@ public class HidingRaycast : MonoBehaviour
             //pour les cachettes
             if (selection.CompareTag("Interactive"))
             {
+                
                 outlineComponent.OutlineColor = Color.red;
                 outlineComponent.enabled = true;
                 newCamera = selection.GetChild(0).gameObject;
 
                 if (Input.GetMouseButtonDown(0))
                 {
-
+                    
                     if (hidden == false)
                     {
                         newCamera.SetActive(true);
