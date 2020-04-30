@@ -85,7 +85,7 @@ public class HidingRaycast : MonoBehaviour
 
                 if (Input.GetMouseButtonUp(0))
                 {
-                    Debug.Log("Object Picked Up");
+                    selection.GetComponent<Objectives>().Interact();
                 }
 
                 _selection = selection;

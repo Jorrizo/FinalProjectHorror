@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactive
   - Quest
+  - Objectif
   layers:
   - Default
   - TransparentFX
