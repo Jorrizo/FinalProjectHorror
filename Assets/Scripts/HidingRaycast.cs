@@ -40,7 +40,8 @@ public class HidingRaycast : MonoBehaviour
 
         if (_selection != null)
         {
-            _selection.GetComponent<Outline>().enabled = false;
+            _selection.GetComponent<OutlineHidingSpot>().DeactivateOutline();
+            //_selection.GetComponent<Outline>().enabled = false;
             _selection = null;
         }
 
@@ -53,9 +54,9 @@ public class HidingRaycast : MonoBehaviour
             //pour les cachettes
             if (selection.CompareTag("Interactive"))
             {
-                
-                outlineComponent.OutlineColor = Color.red;
-                outlineComponent.enabled = true;
+                selection.GetComponent<OutlineHidingSpot>().ActivateOutline();
+                /*outlineComponent.OutlineColor = Color.red;
+                outlineComponent.enabled = true;*/
                 newCamera = selection.GetChild(0).gameObject;
 
                 if (Input.GetMouseButtonDown(0))
