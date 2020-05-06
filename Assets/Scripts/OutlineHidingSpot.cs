@@ -8,10 +8,21 @@ public class OutlineHidingSpot : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < childObjects.Length; i++)
+        if(gameObject.CompareTag("Interactive"))
         {
-            childObjects[i].GetComponent<Outline>().OutlineColor = Color.red;
-            childObjects[i].GetComponent<Outline>().OutlineWidth = 4f;
+            for (int i = 0; i < childObjects.Length; i++)
+            {
+                childObjects[i].GetComponent<Outline>().OutlineColor = Color.blue;
+                childObjects[i].GetComponent<Outline>().OutlineWidth = 4f;
+            }
+        }
+        else if(gameObject.CompareTag("Quest"))
+        {
+            for (int i = 0; i < childObjects.Length; i++)
+            {
+                childObjects[i].GetComponent<Outline>().OutlineColor = Color.red;
+                childObjects[i].GetComponent<Outline>().OutlineWidth = 4f;
+            }
         }
     }
 

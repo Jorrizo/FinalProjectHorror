@@ -7,17 +7,7 @@ public class Objectives : MonoBehaviour
     public int objectiveNumber;
    
 
-    void Update()
-    {
-       /* if(objectiveNumber != GameManager.objectivesDone)
-        {
-            gameObject.tag = "Objectif";
-        }
-        else
-        {
-            gameObject.tag = "Quest";
-        }*/
-    }
+
 
     public void Interact()
     {
@@ -26,6 +16,7 @@ public class Objectives : MonoBehaviour
             Debug.Log(GameManager.objectivesDone);
             GameManager.objectivesDone++;
             Debug.Log(GameManager.objectivesDone);
+            PlayerPrefs.SetInt("Objectif", GameManager.objectivesBeforeDeath += 1);
         }
         else
         {

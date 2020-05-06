@@ -41,7 +41,6 @@ public class HidingRaycast : MonoBehaviour
         if (_selection != null)
         {
             _selection.GetComponent<OutlineHidingSpot>().DeactivateOutline();
-            //_selection.GetComponent<Outline>().enabled = false;
             _selection = null;
         }
 
@@ -55,8 +54,6 @@ public class HidingRaycast : MonoBehaviour
             if (selection.CompareTag("Interactive"))
             {
                 selection.GetComponent<OutlineHidingSpot>().ActivateOutline();
-                /*outlineComponent.OutlineColor = Color.red;
-                outlineComponent.enabled = true;*/
                 newCamera = selection.GetChild(0).gameObject;
 
                 if (Input.GetMouseButtonDown(0))
@@ -81,8 +78,7 @@ public class HidingRaycast : MonoBehaviour
             //pour les objectifs
             if (selection.CompareTag("Quest"))
             {
-                outlineComponent.OutlineColor = Color.blue;
-                outlineComponent.enabled = true;
+                selection.GetComponent<OutlineHidingSpot>().ActivateOutline();
 
                 if (Input.GetMouseButtonUp(0))
                 {
