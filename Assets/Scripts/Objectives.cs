@@ -7,8 +7,6 @@ public class Objectives : MonoBehaviour
     public int objectiveNumber;
    
 
-
-
     public void Interact()
     {
         if(objectiveNumber == GameManager.objectivesDone)

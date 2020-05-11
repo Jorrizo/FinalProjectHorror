@@ -7,28 +7,24 @@ public class GameManager : MonoBehaviour
 {
     public static int objectivesDone;
 
-    public Transform player;
-    public Transform Spawnpoint1;
-    public Transform Spawnpoint2;
+    public Transform SP1;
+    public Transform SP2;
+
+    public static Transform Spawnpoint1;
+    public static Transform Spawnpoint2;
     
-    [HideInInspector]
     public static int objectivesBeforeDeath;
 
     void Start()
     {
-       // PlayerPrefs.DeleteAll();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //PlayerPrefs.DeleteAll();
         objectivesBeforeDeath = PlayerPrefs.GetInt("Objectif", 0);
         objectivesDone = objectivesBeforeDeath;
         Debug.Log(objectivesBeforeDeath);
-        /*if (objectivesBeforeDeath == 0)
-        {
-            player = Spawnpoint1;
-        }
-        if (objectivesBeforeDeath > 0)
-        {
-            player = Spawnpoint2;
-        }*/
+
+        Spawnpoint1 = SP1;
+        Spawnpoint2 = SP2;
+             
     }
 
 }
