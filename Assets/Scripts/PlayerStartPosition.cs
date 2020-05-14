@@ -7,7 +7,7 @@ public class PlayerStartPosition : MonoBehaviour
     
     void Start()
     {
-        if(GameManager.objectivesDone == 0)
+        if(GameManager.objectivesBeforeDeath == 0)
         {
             gameObject.transform.position = GameManager.Spawnpoint1.position;
             gameObject.transform.rotation = GameManager.Spawnpoint1.rotation;
