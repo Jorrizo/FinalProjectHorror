@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1661963399713163753}
   - component: {fileID: 1661963399713163754}
   - component: {fileID: 1661963399713163751}
-  - component: {fileID: 1661963399713163750}
+  - component: {fileID: 2370998929853259405}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -192,8 +192,8 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!64 &1661963399713163750
-MeshCollider:
+--- !u!65 &2370998929853259405
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,10 +202,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5424696581441372034, guid: 59b5c7c3a56abd641968158a7e255b7b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.43004096, y: 1.4152259, z: 0.1032646}
+  m_Center: {x: -0.010294521, y: 0, z: -0.04767899}
 --- !u!1 &1661963399924842089
 GameObject:
   m_ObjectHideFlags: 0
