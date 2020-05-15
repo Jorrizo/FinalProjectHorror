@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
-  hidingSpot: {fileID: 0}
+  hidingSpot: {fileID: 1661963400309466582}
   BottomLimit: 25
   TopLimit: 25
   LeftLimit: 10

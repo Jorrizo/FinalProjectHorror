@@ -5,7 +5,6 @@ using UnityEngine;
 public class Objectives : MonoBehaviour
 {
     public int objectiveNumber;
-   
 
     public void Interact()
     {
@@ -20,6 +19,7 @@ public class Objectives : MonoBehaviour
         {
             Debug.Log("Nope");
         }
+        gameObject.GetComponent<FinDeDémo>().enabled = true;
     }
   
 }
