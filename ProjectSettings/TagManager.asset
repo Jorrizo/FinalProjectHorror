@@ -7,6 +7,13 @@ TagManager:
   - Interactive
   - Quest
   - Objectif
+  - Destination2
+  - Destination
+  - monster
+  - destination3
+  - Destination3
+  - Destination4
+  - Destination1
   layers:
   - Default
   - TransparentFX

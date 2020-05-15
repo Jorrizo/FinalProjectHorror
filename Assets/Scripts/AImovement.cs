@@ -8,18 +8,12 @@ public class AImovement : MonoBehaviour
 {
 
     public NavMeshAgent agent;
-    public GameObject destination1;
-    public GameObject destination2;
-    public GameObject destination3;
-    public GameObject destination4;
-    public GameObject destination5;
     public Transform player;
     public GameObject agentPos;
     public int state;
     public float timer;
     public float timerSearch;
     private float timerDeath;
-    public GameObject[] destinations;
     private int destinationId;
 
     private Vector3 forward;
@@ -50,13 +44,9 @@ public class AImovement : MonoBehaviour
         //Fonctionnement
         agent = GetComponent<NavMeshAgent>();
         state = 0;
-        agent.SetDestination(destination1.transform.position);
-        timer = 20f;
+        timer = 10f;
         timerSearch = 10f;
         timerDeath = 2;
-
-        //Destinations
-        destinationId = Random.Range(0, destinations.Length);
     }
 
     void Update()
@@ -310,7 +300,6 @@ public class AImovement : MonoBehaviour
         if (state == 0)
         {
             Debug.Log("trop bien");
-            agent.SetDestination(destination2.transform.position);
             agent.speed = 4;
         }
 
@@ -349,26 +338,9 @@ public class AImovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Destination"))
-        {
-            agent.SetDestination(destination2.transform.position);
-            Debug.Log("Etat : Neutre");
-        }
-
-        if (other.gameObject.CompareTag("Destination2"))
-        {
-            agent.SetDestination(destination1.transform.position);
-            Debug.Log("Etat : Neutre");
-            
-        }
-
         if (other.gameObject.CompareTag("Player"))
         {
             timerDeath -= 1 * Time.deltaTime;
-
         }
-
-    }
-
-    
+    }   
 }
