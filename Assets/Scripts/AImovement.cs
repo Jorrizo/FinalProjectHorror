@@ -10,10 +10,11 @@ public class AImovement : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public GameObject agentPos;
+    public Transform departureDestination;
     public int state;
     public float timer;
     public float timerSearch;
-    private float timerDeath;
+    public float timerDeath;
     private int destinationId;
 
     private Vector3 forward;
@@ -46,7 +47,7 @@ public class AImovement : MonoBehaviour
         state = 0;
         timer = 10f;
         timerSearch = 10f;
-        timerDeath = 2;
+        timerDeath = 2f;
     }
 
     void Update()
@@ -308,8 +309,8 @@ public class AImovement : MonoBehaviour
         {
             agent.SetDestination(player.position);
             timer -= Time.deltaTime;
-            agent.speed = 10;
-            agent.acceleration = 20;
+            agent.speed = 7;
+            agent.acceleration = 12;
         }
         
         // recherche
@@ -322,6 +323,7 @@ public class AImovement : MonoBehaviour
         {
             state = 0;
             timer = 20f;
+            agent.SetDestination(departureDestination.position);
         }
 
         if(timerSearch <= 0)
@@ -329,14 +331,14 @@ public class AImovement : MonoBehaviour
             state = 0;
         }
 
-        if(timerDeath<= 0)
+        if(timerDeath<= 0f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            timerDeath = 0;
+            timerDeath = 2f;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
