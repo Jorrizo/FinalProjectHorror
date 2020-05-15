@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class AImovement : MonoBehaviour
 {
 
+    public GameObject playerHiding;
+
     public NavMeshAgent agent;
     public Transform player;
     public GameObject agentPos;
@@ -100,203 +102,212 @@ public class AImovement : MonoBehaviour
         Debug.DrawRay(transform.position, almostBehindRight * 1, Color.red);
         Debug.DrawRay(transform.position, behind * 2, Color.red);
 
-        if (Physics.Raycast(transform.position, forward, out hit, 15))
+        if(state != 1 && playerHiding.GetComponent<HidingRaycast>().hidden == true)
         {
-            if (hit.collider.CompareTag("Player"))
+            return;
+        }
+        else
+        {
+            if (Physics.Raycast(transform.position, forward, out hit, 15))
             {
-                Debug.Log("see you again");
-                state = 1;
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, right, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, left, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremRight, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremLeft, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremLeftLeft, out hit, 24))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremRightRight, out hit, 24))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, almostLeft, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, almostRight, out hit, 15))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, toLeft, out hit, 12))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, toRight, out hit, 12))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, realLeft, out hit, 36))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, realRight, out hit, 36))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, behindLeft, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, behindRight, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremBehindLeft, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremBehindRight, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremBehindRightRight, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, extremBehindLeftLeft, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, almostBehindRight, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, almostBehindLeft, out hit, 1))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
+            }
+
+            if (Physics.Raycast(transform.position, behind, out hit, 2))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("see you again");
+                    state = 1;
+                }
             }
         }
 
-        if (Physics.Raycast(transform.position, forward, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, forward, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremRight, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremLeft, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremLeftLeft, out hit, 24))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremRightRight, out hit, 24))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, almostLeft, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, almostRight, out hit, 15))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, toLeft, out hit, 12))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, toRight, out hit, 12))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, realLeft, out hit, 36))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, realRight, out hit, 36))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, behindLeft, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, behindRight, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremBehindLeft, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremBehindRight, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremBehindRightRight, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, extremBehindLeftLeft, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, almostBehindRight, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, almostBehindLeft, out hit, 1))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
-
-        if(Physics.Raycast(transform.position, behind, out hit, 2))
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("see you again");
-                state = 1;
-            }
-        }
+        
         // neutre
         if (state == 0)
         {
