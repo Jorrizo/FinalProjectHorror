@@ -36509,7 +36509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a155023d9a387d4196b74e8717d1024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHiding: {fileID: 0}
+  playerHiding: {fileID: 640510330}
   agent: {fileID: 1882753456}
   player: {fileID: 500778446}
   agentPos: {fileID: 1882753454}
