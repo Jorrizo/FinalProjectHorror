@@ -29,10 +29,11 @@ public class HidingRaycast : MonoBehaviour
         newCamera.SetActive(false);
         isHidden = false;
         hidden = false;
+
     }
 
 
-
+    
 
     void Update()
     {
