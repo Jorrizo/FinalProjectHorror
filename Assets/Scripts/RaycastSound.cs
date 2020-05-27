@@ -5,7 +5,10 @@ using UnityEngine;
 public class RaycastSound : MonoBehaviour
 {
 
-    public GameObject monster;
+    public GameObject objet1;
+    public GameObject objet2;
+
+    public AudioSource sound;
 
 
     // Start is called before the first frame update
@@ -17,17 +20,21 @@ public class RaycastSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = monster.transform.position - transform.position;
+        Vector3 direction = objet2.transform.position - transform.position;
         
         Debug.DrawRay(transform.position, direction, Color.red);
         RaycastHit hit;
-        Ray ray = new Ray(transform.position, direction);
+        Ray ray = new Ray(objet2.transform.position, direction);
 
         if(Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject.tag == "wall")
+            if (hit.collider.gameObject.tag == "Wall")
             {
-                Debug.Log("WOW UN MUR !!");
+                sound.volume = 0.003f;
+            }
+            else
+            {
+                sound.volume = 0.2f;
             }
         }
     }

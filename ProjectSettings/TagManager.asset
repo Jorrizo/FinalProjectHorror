@@ -14,6 +14,7 @@ TagManager:
   - Destination3
   - Destination4
   - Destination1
+  - Wall
   layers:
   - Default
   - TransparentFX
