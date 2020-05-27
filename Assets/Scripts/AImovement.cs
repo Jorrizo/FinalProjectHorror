@@ -311,7 +311,7 @@ public class AImovement : MonoBehaviour
         // neutre
         if (state == 0)
         {
-            Debug.Log("trop bien");
+            //Debug.Log("trop bien");
             agent.speed = 4;
         }
 
