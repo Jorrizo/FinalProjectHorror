@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public GameObject buttonReset;
+    public GameObject options;
+    public GameObject mainMenu;
 
     private void Start()
     {
-        buttonReset.SetActive(false);
+        mainMenu.SetActive(true);
+        options.SetActive(false);
     }
 
     public void ButtonStart()
@@ -19,7 +21,8 @@ public class StartMenu : MonoBehaviour
 
     public void ButtonReset()
     {
-        buttonReset.SetActive(true);
+        options.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     public void ButtonQuit()

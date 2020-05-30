@@ -49,11 +49,6 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
 
-    public void Restart()
-    {
-        Debug.Log("itworks");
-        SceneManager.LoadScene(1);
-    }
 
     public void GoBack()
     {
