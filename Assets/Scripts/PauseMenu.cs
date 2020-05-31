@@ -7,15 +7,18 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
+    public GameObject resumeSelect;
+    public GameObject quitSelect;
+
+    bool resumeSelected;
+
     public GameObject pauseMenuUI;
-    public GameObject hidingCamera;
 
     void Start()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        hidingCamera.GetComponent<HidingRaycast>().enabled = true;
     }
 
     void Update()
@@ -31,20 +34,52 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (GameIsPaused)
+        {
+            if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.S))
+            {
+                if(resumeSelected == true)
+                {
+                    quitSelect.SetActive(true);
+                    resumeSelect.SetActive(false);
+                    resumeSelected = false;
+                }
+                else
+                {
+                    quitSelect.SetActive(false);
+                    resumeSelect.SetActive(true);
+                    resumeSelected = true;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if(resumeSelected == true)
+                {
+                    ContinueGame();
+                }
+                else
+                {
+                    GoBack();
+                }
+            }
+        }
     }
 
     public void Pause()
     {
-        hidingCamera.GetComponent<HidingRaycast>().enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        quitSelect.SetActive(false);
+        resumeSelect.SetActive(true);
+        resumeSelected = true;
     }
 
     public void ContinueGame()
     {
         pauseMenuUI.SetActive(false);
-        hidingCamera.GetComponent<HidingRaycast>().enabled = true;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
