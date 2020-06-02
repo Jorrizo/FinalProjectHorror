@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class GameManager : MonoBehaviour
 {
+    public GameObject monstre;
+
     public static int objectivesDone;
 
     public static int objectivesBeforeDeath;
@@ -16,6 +18,10 @@ public class GameManager : MonoBehaviour
         objectivesDone = objectivesBeforeDeath;
         Debug.Log(objectivesBeforeDeath);      
              
+        if(objectivesDone != 0)
+        {
+            monstre.SetActive(true);
+        }
     }
 
 }
