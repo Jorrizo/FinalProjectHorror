@@ -19,14 +19,14 @@ public class GameManager : MonoBehaviour
         objectivesDone = objectivesBeforeDeath;
         Debug.Log(objectivesBeforeDeath);      
              
-        if(objectivesDone != 0)
+       /* if(objectivesDone != 0)
         {
             monstre.SetActive(true);
             for(int i=0; i<= lights.Length; i++)
             {
                 lights[i].SetActive(true);
             }
-        }
+        }*/
     }
 
 }

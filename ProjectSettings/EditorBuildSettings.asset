@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuStart.unity
     guid: 3ac06f0ff8a9dc448a110456a04d3625
   - enabled: 1
-    path: Assets/Scenes/TestSceneVictor.unity
-    guid: 8bbf6a627d6693a48a6a700992a9d214
+    path: Assets/bordel_QS_OK/scene_QS_OK/scene_final_texturer.unity
+    guid: 4dd048fcd6d618e47b80caf79c34cef2
   - enabled: 1
     path: Assets/Scenes/DemoEndScene.unity
     guid: e79922960983fca49bb60dcc52dc65c6
