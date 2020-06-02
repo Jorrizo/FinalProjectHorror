@@ -19,6 +19,8 @@ public class AImovement : MonoBehaviour
     public float timerDeath;
     private int destinationId;
 
+    public Animator anim;
+
     private Vector3 forward;
     private Vector3 right;
     private Vector3 left;
@@ -354,6 +356,7 @@ public class AImovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             timerDeath -= 1 * Time.deltaTime;
+            anim.SetBool("isHurt", true);
         }
     }   
 }
