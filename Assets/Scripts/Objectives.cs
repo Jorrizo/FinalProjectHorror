@@ -6,6 +6,7 @@ public class Objectives : MonoBehaviour
 {
     public int objectiveNumber;
 
+    public GameObject objectif;
     public void Interact()
     {
         if(objectiveNumber == GameManager.objectivesDone)
@@ -14,7 +15,7 @@ public class Objectives : MonoBehaviour
             GameManager.objectivesDone++;
             Debug.Log(GameManager.objectivesDone);
             PlayerPrefs.SetInt("Objectif", GameManager.objectivesBeforeDeath += 1);
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            objectif.SetActive(true);
         }
         else
         {
