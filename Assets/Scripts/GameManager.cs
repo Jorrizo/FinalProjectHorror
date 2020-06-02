@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject monstre;
+    public GameObject[] lights;
 
     public static int objectivesDone;
 
@@ -21,6 +22,10 @@ public class GameManager : MonoBehaviour
         if(objectivesDone != 0)
         {
             monstre.SetActive(true);
+            for(int i=0; i<= lights.Length; i++)
+            {
+                lights[i].SetActive(true);
+            }
         }
     }
 
