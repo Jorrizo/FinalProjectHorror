@@ -88,6 +88,7 @@ public class PauseMenu : MonoBehaviour
     public void GoBack()
     {
         Debug.Log("italsoworks");
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 }
