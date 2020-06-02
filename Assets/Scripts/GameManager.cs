@@ -5,8 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class GameManager : MonoBehaviour
 {
-    public GameObject monstre;
-    public GameObject[] lights;
 
     public static int objectivesDone;
 

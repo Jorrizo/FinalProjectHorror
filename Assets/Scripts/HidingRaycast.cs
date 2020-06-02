@@ -26,7 +26,7 @@ public class HidingRaycast : MonoBehaviour
     void Start()
     {
         playerBody.GetComponent<MeshRenderer>().enabled = false;
-        newCamera.SetActive(false);
+        //newCamera.SetActive(false);
         isHidden = false;
         hidden = false;
 
