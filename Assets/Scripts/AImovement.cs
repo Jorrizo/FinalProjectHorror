@@ -322,7 +322,7 @@ public class AImovement : MonoBehaviour
         {
             agent.SetDestination(player.position);
             timer -= Time.deltaTime;
-            agent.speed = 7;
+            agent.speed = 6;
             agent.acceleration = 12;
         }
         
