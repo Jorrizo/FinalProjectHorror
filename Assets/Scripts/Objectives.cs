@@ -14,12 +14,13 @@ public class Objectives : MonoBehaviour
             GameManager.objectivesDone++;
             Debug.Log(GameManager.objectivesDone);
             PlayerPrefs.SetInt("Objectif", GameManager.objectivesBeforeDeath += 1);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
             Debug.Log("Nope");
         }
-        gameObject.GetComponent<FinDeDémo>().enabled = true;
+        
     }
   
 }
