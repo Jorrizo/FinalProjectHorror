@@ -5,7 +5,7 @@ using UnityEngine;
 public class Objectif1 : MonoBehaviour
 {
     public GameObject monster;
-    public GameObject[] lights;
+    public GameObject lights;
 
     void Start()
     {
@@ -16,10 +16,7 @@ public class Objectif1 : MonoBehaviour
 
     public void ActivateLights()
     {
-        for(int i=0; i<=lights.Length; i++)
-        {
-            lights[i].SetActive(true);
-        }
+        lights.SetActive(true);
     }
 
     public void MonsterSpawn()
